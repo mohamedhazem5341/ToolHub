@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <script defer src="/main.js"></script>
+    <title>ToolHub</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <a href="#" class="logo" onclick="showPage('home')">🛠️ ToolHub</a>
+          <nav class="nav-menu">
+            <a href="#" class="nav-link active" onclick="showPage('home')"
+              >Home</a
+            >
+            <a href="#" class="nav-link" onclick="showPage('age-calculator')"
+              >Age Calculator</a
+            >
+            <a href="#" class="nav-link" onclick="showPage('bmi-calculator')"
+              >BMI Calculator</a
+            >
+            <a
+              href="#"
+              class="nav-link"
+              onclick="showPage('currency-converter')"
+              >Currency</a
+            >
+            <a
+              href="#"
+              class="nav-link"
+              onclick="showPage('password-generator')"
+              >Password</a
+            >
+            <a href="#" class="nav-link" onclick="showPage('sleep-calculator')"
+              >Sleep</a
+            >
+            <a href="#" class="nav-link" onclick="showPage('todo-list')"
+              >Todo</a
+            >
+            <a href="#" class="nav-link" onclick="showPage('unit-converter')"
+              >Units</a
+            >
+            <a href="#" class="nav-link" onclick="showPage('settings')"
+              >Settings</a
+            >
+          </nav>
+          <div class="mobile-nav">
+            <select
+              onchange="showPage(this.value)"
+              style="
+                background: var(--bg-color);
+                color: var(--text-color);
+                border: 1px solid var(--border-color);
+                border-radius: 0.5rem;
+                padding: 0.5rem;
+              "
+            >
+              <option value="home">Home</option>
+              <option value="age-calculator">Age Calculator</option>
+              <option value="bmi-calculator">BMI Calculator</option>
+              <option value="currency-converter">Currency</option>
+              <option value="password-generator">Password</option>
+              <option value="sleep-calculator">Sleep</option>
+              <option value="todo-list">Todo</option>
+              <option value="unit-converter">Units</option>
+              <option value="settings">Settings</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="container">
+        <!-- Home Page -->
+        <div id="home" class="page active">
+          <div class="hero">
+            <h1>Your Digital helper</h1>
+            <p>
+              Access powerful tools for daily calculations, conversions, and
+              productivity - all in one fast, and user-friendly
+              platform.
+            </p>
+          </div>
+
+          <div class="ad-banner"></div>
+
+          <div class="tools-grid">
+            <div class="tool-card" onclick="showPage('age-calculator')">
+              <div class="tool-icon">🎂</div>
+              <h3>Age Calculator</h3>
+              <p>
+                Calculate your exact age in years, months, days, and even
+                seconds with precision.
+              </p>
+            </div>
+
+            <div class="tool-card" onclick="showPage('bmi-calculator')">
+              <div class="tool-icon">⚖️</div>
+              <h3>BMI Calculator</h3>
+              <p>
+                Calculate your Body Mass Index and get health insights based on
+                WHO standards.
+              </p>
+            </div>
+
+            <div class="tool-card" onclick="showPage('currency-converter')">
+              <div class="tool-icon">💱</div>
+              <h3>Currency Converter</h3>
+              <p>
+                Convert between 170+ currencies with real-time exchange rates.
+              </p>
+            </div>
+
+            <div class="tool-card" onclick="showPage('password-generator')">
+              <div class="tool-icon">🔐</div>
+              <h3>Password Generator</h3>
+              <p>
+                Generate secure passwords with customizable length and character
+                sets.
+              </p>
+            </div>
+
+            <div class="tool-card" onclick="showPage('sleep-calculator')">
+              <div class="tool-icon">😴</div>
+              <h3>Sleep Calculator</h3>
+              <p>
+                Find the optimal bedtime for quality sleep based on sleep cycle
+                science.
+              </p>
+            </div>
+
+            <div class="tool-card" onclick="showPage('todo-list')">
+              <div class="tool-icon">✅</div>
+              <h3>Todo List</h3>
+              <p>Organize your tasks with our intuitive todo list manager.</p>
+            </div>
+
+            <div class="tool-card" onclick="showPage('unit-converter')">
+              <div class="tool-icon">📏</div>
+              <h3>Unit Converter</h3>
+              <p>Convert between various units of measurement instantly.</p>
+            </div>
+          </div>
+
+          <!-- Educational Content for AdSense -->
+          <div class="content-section">
+            <h2>Why Use Online Calculators and Tools?</h2>
+            <p>
+              In today's fast-paced digital world, having quick access to
+              reliable calculation tools can significantly improve your
+              productivity and decision-making. Whether you're planning your
+              health goals, managing finances, or organizing your daily tasks,
+              the right tools make all the difference.
+            </p>
+            <p>
+              Our comprehensive suite of calculators and utilities is designed
+              with user experience in mind, featuring intuitive interfaces,
+              accurate calculations, and responsive design that works seamlessly
+              across all devices.
+            </p>
+          </div>
+
+          <div class="ad-banner"></div>
+
+          <div class="content-section">
+            <h2>The Science Behind Better Living</h2>
+            <p>
+              Understanding your body metrics like BMI, optimizing your sleep
+              schedule, and maintaining strong digital security are fundamental
+              aspects of modern wellness. Research shows that people who track
+              their health metrics and maintain organized digital habits tend to
+              achieve better life outcomes.
+            </p>
+            <p>
+              Our tools are built on scientifically-backed principles, from
+              sleep cycle research that informs our sleep calculator to WHO
+              guidelines that power our BMI assessments.
+            </p>
+          </div>
+        </div>
+
+        <!-- Age Calculator -->
+        <div id="age-calculator" class="page">
+          <div class="page-header">
+            <h1 class="page-title">Age Calculator</h1>
+            <p class="page-subtitle">
+              Calculate your exact age with precision down to the second
+            </p>
+          </div>
+
+          <div class="calculator-container">
+            <div class="form-group">
+              <label class="form-label">Birth Date</label>
+              <input type="date" id="birthDate" class="form-input" max="" />
+            </div>
+
+            <button class="btn" onclick="calculateAge()">Calculate Age</button>
+
+            <div id="ageResult" class="result-card" style="display: none">
+              <h3>Your Age:</h3>
+              <div id="ageDisplay"></div>
+            </div>
+          </div>
+
+          <div class="ad-banner"></div>
+
+          <div class="content-section">
+            <h2>Understanding Age Calculation</h2>
+            <p>
+              Age calculation involves more than just subtracting birth year
+              from current year. Our precise age calculator considers leap
+              years, varying month lengths, and provides accurate results down
+              to days, hours, and minutes.
+            </p>
+            <p>
+              This tool is useful for legal documents, age verification,
+              planning celebrations, or simply satisfying curiosity about your
+              exact time on Earth.
+            </p>
+          </div>
+        </div>
+
+        <!-- BMI Calculator -->
+        <div id="bmi-calculator" class="page">
+          <div class="page-header">
+            <h1 class="page-title">BMI Calculator</h1>
+            <p class="page-subtitle">
+              Calculate your Body Mass Index and understand your health status
+            </p>
+          </div>
+
+          <div class="calculator-container">
+            <div class="form-group">
+              <label class="form-label">Height (cm)</label>
+              <input
+                type="number"
+                id="height"
+                class="form-input"
+                placeholder="Enter height in centimeters"
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Weight (kg)</label>
+              <input
+                type="number"
+                id="weight"
+                class="form-input"
+                placeholder="Enter weight in kilograms"
+              />
+            </div>
+
+            <button class="btn" onclick="calculateBMI()">Calculate BMI</button>
+
+            <div id="bmiResult" class="result-card" style="display: none">
+              <h3>Your BMI Result:</h3>
+              <div id="bmiDisplay"></div>
+            </div>
+          </div>
+
+          <div class="ad-banner"></div>
+
+          <div class="content-section">
+            <h2>Understanding BMI and Health</h2>
+            <p>
+              Body Mass Index (BMI) is a widely used screening tool that helps
+              assess whether you're at a healthy weight for your height. While
+              BMI doesn't directly measure body fat, it provides a useful
+              indicator for most adults.
+            </p>
+            <p>
+              BMI categories are based on extensive research and are used by
+              healthcare professionals worldwide. However, remember that BMI is
+              just one factor in assessing health, and individual circumstances
+              may vary.
+            </p>
+          </div>
+        </div>
+
+        <!-- Currency Converter -->
+        <div id="currency-converter" class="page">
+          <div class="page-header">
+            <h1 class="page-title">Currency Converter</h1>
+            <p class="page-subtitle">
+              Convert between world currencies with real-time exchange rates
+            </p>
+          </div>
+
+          <div class="calculator-container">
+            <div class="form-group">
+              <label class="form-label">Amount</label>
+              <input
+                type="number"
+                id="amount"
+                class="form-input"
+                placeholder="Enter amount"
+                value="1"
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">From Currency</label>
+              <select id="fromCurrency" class="form-select">
+                <option value="USD">USD - US Dollar</option>
+                <option value="EUR">EUR - Euro</option>
+                <option value="GBP">GBP - British Pound</option>
+                <option value="JPY">JPY - Japanese Yen</option>
+                <option value="CAD">CAD - Canadian Dollar</option>
+                <option value="AUD">AUD - Australian Dollar</option>
+                <option value="CHF">CHF - Swiss Franc</option>
+                <option value="CNY">CNY - Chinese Yuan</option>
+                <option value="EGP">EGP - Egyptian Pound</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">To Currency</label>
+              <select id="toCurrency" class="form-select">
+                <option value="EUR">EUR - Euro</option>
+                <option value="USD">USD - US Dollar</option>
+                <option value="GBP">GBP - British Pound</option>
+                <option value="JPY">JPY - Japanese Yen</option>
+                <option value="CAD">CAD - Canadian Dollar</option>
+                <option value="AUD">AUD - Australian Dollar</option>
+                <option value="CHF">CHF - Swiss Franc</option>
+                <option value="CNY">CNY - Chinese Yuan</option>
+                <option value="EGP">EGP - Egyptian Pound</option>
+              </select>
+            </div>
+
+            <button class="btn" onclick="convertCurrency()">
+              Convert Currency
+            </button>
+
+            <div id="currencyResult" class="result-card" style="display: none">
+              <div id="currencyDisplay"></div>
+              <p
+                style="
+                  margin-top: 1rem;
+                  font-size: 0.9rem;
+                  color: var(--text-secondary);
+                "
+              >
+                Exchange rates updated: <span id="lastUpdated"></span>
+              </p>
+            </div>
+          </div>
+
+          <div class="ad-banner"></div>
+
+          <div class="content-section">
+            <h2>Global Currency Markets</h2>
+            <p>
+              Currency exchange rates fluctuate constantly based on economic
+              factors, political events, and market sentiment. Our converter
+              uses real-time data to provide the most accurate conversions
+              possible.
+            </p>
+            <p>
+              Whether you're traveling, shopping internationally, or conducting
+              business across borders, having access to current exchange rates
+              is essential for making informed financial decisions.
+            </p>
+          </div>
+        </div>
+
+        <!-- Password Generator -->
+        <div id="password-generator" class="page">
+          <div class="page-header">
+            <h1 class="page-title">Password Generator</h1>
+            <p class="page-subtitle">
+              Create strong, secure passwords to protect your digital life
+            </p>
+          </div>
+
+          <div class="calculator-container">
+            <div class="form-group">
+              <label class="form-label">Password Length</label>
+              <input
+                type="range"
+                id="passwordLength"
+                min="8"
+                max="50"
+                value="16"
+                class="form-input"
+                oninput="updateLengthDisplay()"
+              />
+              <span id="lengthDisplay">16 characters</span>
+            </div>
+
+            <div class="password-options">
+              <div class="checkbox-group">
+                <input type="checkbox" id="includeUppercase" checked />
+                <label for="includeUppercase">Uppercase (A-Z)</label>
+              </div>
+              <div class="checkbox-group">
+                <input type="checkbox" id="includeLowercase" checked />
+                <label for="includeLowercase">Lowercase (a-z)</label>
+              </div>
+              <div class="checkbox-group">
+                <input type="checkbox" id="includeNumbers" checked />
+                <label for="includeNumbers">Numbers (0-9)</label>
+              </div>
+              <div class="checkbox-group">
+                <input type="checkbox" id="includeSymbols" />
+                <label for="includeSymbols">Symbols (!@#$)</label>
+              </div>
+            </div>
+
+            <button class="btn" onclick="generatePassword()">
+              Generate Password
+            </button>
+
+            <div id="passwordResult" class="result-card" style="display: none">
+              <h3>Generated Password:</h3>
+              <div id="generatedPassword" class="generated-password"></div>
+              <button class="copy-btn" onclick="copyPassword()">
+                Copy Password
+              </button>
+            </div>
+          </div>
+
+          <div class="ad-banner"></div>
+
+          <div class="content-section">
+            <h2>Password Security Best Practices</h2>
+            <p>
+              Strong passwords are your first line of defense against cyber
+              threats. A secure password should be at least 12 characters long,
+              include a mix of character types, and be unique for each account.
+            </p>
+            <p>
+              Avoid using personal information, common words, or predictable
+              patterns. Consider using a password manager to store and organize
+              your unique passwords securely.
+            </p>
+          </div>
+        </div>
+
+        <!-- Sleep Calculator -->
+        <div id="sleep-calculator" class="page">
+          <div class="page-header">
+            <h1 class="page-title">Sleep Calculator</h1>
+            <p class="page-subtitle">
+              Optimize your sleep schedule for better rest and recovery
+            </p>
+          </div>
+
+          <div class="calculator-container">
+            <div class="form-group">
+              <label class="form-label"
+                >What time do you want to wake up?</label
+              >
+              <input
+                type="time"
+                id="wakeUpTime"
+                class="form-input"
+                value="07:00"
+              />
+            </div>
+
+            <button class="btn" onclick="calculateSleepTime()">
+              Calculate Bedtime
+            </button>
+
+            <div id="sleepResult" class="result-card" style="display: none">
+              <h3>Recommended Bedtimes:</h3>
+              <div id="sleepDisplay"></div>
+            </div>
+          </div>
+
+          <div class="ad-banner"></div>
+
+          <div class="content-section">
+            <h2>The Science of Sleep Cycles</h2>
+            <p>
+              Sleep occurs in cycles of approximately 90 minutes, consisting of
+              light sleep, deep sleep, and REM sleep phases. Waking up at the
+              end of a complete cycle helps you feel more refreshed and alert.
+            </p>
+            <p>
+              Our calculator recommends bedtimes that align with natural sleep
+              cycles, accounting for the average 15 minutes it takes to fall
+              asleep. Quality sleep is essential for cognitive function, immune
+              health, and overall well-being.
+            </p>
+          </div>
+        </div>
+
+        <!-- Todo List -->
+        <div id="todo-list" class="page">
+          <div class="page-header">
+            <h1 class="page-title">Todo List</h1>
+            <p class="page-subtitle">
+              Stay organized and boost your productivity
+            </p>
+          </div>
+
+          <div class="calculator-container">
+            <div class="form-group">
+              <label class="form-label">Add New Task</label>
+              <div style="display: flex; gap: 1rem">
+                <input
+                  type="text"
+                  id="todoInput"
+                  class="form-input"
+                  placeholder="Enter your task..."
+                  onkeypress="handleTodoKeyPress(event)"
+                />
+                <button class="btn" onclick="addTodo()">Add Task</button>
+              </div>
+            </div>
+
+            <div id="todoList"></div>
+          </div>
+
+          <div class="ad-banner"></div>
+
+          <div class="content-section">
+            <h2>The Psychology of Task Management</h2>
+            <p>
+              Research in cognitive psychology shows that writing down tasks
+              reduces mental load and improves focus. The act of checking off
+              completed items releases dopamine, creating a positive feedback
+              loop that encourages productivity.
+            </p>
+            <p>
+              Effective task management involves breaking large projects into
+              smaller, actionable items and prioritizing based on importance and
+              urgency. Our todo list helps you implement these proven
+              strategies.
+            </p>
+          </div>
+        </div>
+
+        <!-- Unit Converter -->
+        <div id="unit-converter" class="page">
+          <div class="page-header">
+            <h1 class="page-title">Unit Converter</h1>
+            <p class="page-subtitle">
+              Convert between various units of measurement
+            </p>
+          </div>
+
+          <div class="calculator-container">
+            <div class="form-group">
+              <label class="form-label">Conversion Type</label>
+              <select
+                id="conversionType"
+                class="form-select"
+                onchange="updateUnitOptions()"
+              >
+                <option value="length">Length</option>
+                <option value="weight">Weight</option>
+                <option value="temperature">Temperature</option>
+                <option value="volume">Volume</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Value</label>
+              <input
+                type="number"
+                id="unitValue"
+                class="form-input"
+                placeholder="Enter value"
+                oninput="convertUnits()"
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">From Unit</label>
+              <select
+                id="fromUnit"
+                class="form-select"
+                onchange="convertUnits()"
+              ></select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">To Unit</label>
+              <select
+                id="toUnit"
+                class="form-select"
+                onchange="convertUnits()"
+              ></select>
+            </div>
+
+            <div id="unitResult" class="result-card" style="display: none">
+              <div id="unitDisplay"></div>
+            </div>
+          </div>
+
+          <div class="ad-banner"></div>
+
+          <div class="content-section">
+            <h2>The Importance of Unit Conversion</h2>
+            <p>
+              Unit conversion is essential in our globalized world where
+              different measurement systems coexist. From cooking recipes to
+              engineering projects, accurate conversions prevent costly mistakes
+              and ensure precision.
+            </p>
+            <p>
+              Understanding different measurement systems helps in international
+              communication, scientific research, and everyday problem-solving
+              across various fields and cultures.
+            </p>
+          </div>
+        </div>
+
+        <!-- Settings -->
+        <div id="settings" class="page">
+          <div class="page-header">
+            <h1 class="page-title">Settings</h1>
+            <p class="page-subtitle">Customize your ToolHub experience</p>
+          </div>
+
+          <div class="settings-section">
+            <h3>Theme Colors</h3>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1rem;
+              "
+            >
+              <div class="form-group">
+                <label class="form-label">Primary Color</label>
+                <input
+                  type="color"
+                  id="primaryColor"
+                  class="color-picker"
+                  value="#6366f1"
+                  onchange="updateColors()"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Accent Color</label>
+                <input
+                  type="color"
+                  id="accentColor"
+                  class="color-picker"
+                  value="#f59e0b"
+                  onchange="updateColors()"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="settings-section">
+            <h3>Background Image</h3>
+            <div class="form-group">
+              <label class="form-label">Upload Custom Background</label>
+              <input
+                type="file"
+                id="backgroundUpload"
+                class="form-input"
+                accept="image/*"
+                onchange="updateBackground()"
+              />
+            </div>
+            <button class="btn btn-secondary" onclick="resetBackground()">
+              Reset to Default
+            </button>
+          </div>
+
+          <div class="settings-section">
+            <button class="btn" onclick="saveSettings()">Save Settings</button>
+            <button class="btn btn-secondary" onclick="resetSettings()">
+              Reset All Settings
+            </button>
+          </div>
+
+          <div class="ad-banner"></div>
+        </div>
+      </div>
+    </main>
+
+    <div class="ad-sidebar">Advertisement<br />160x600<br />Skyscraper</div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>About ToolHub</h4>
+            <p>
+              ToolHub is your comprehensive digital toolkit, providing essential
+              calculators and utilities for daily life. We're committed to
+              delivering accurate, fast, and user-friendly tools.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h4>Our Tools</h4>
+            <ul>
+              <li>
+                <a href="#" onclick="showPage('age-calculator')"
+                  >Age Calculator</a
+                >
+              </li>
+              <li>
+                <a href="#" onclick="showPage('bmi-calculator')"
+                  >BMI Calculator</a
+                >
+              </li>
+              <li>
+                <a href="#" onclick="showPage('currency-converter')"
+                  >Currency Converter</a
+                >
+              </li>
+              <li>
+                <a href="#" onclick="showPage('password-generator')"
+                  >Password Generator</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Resources</h4>
+            <ul>
+              <li>
+                <a href="#" onclick="showPage('sleep-calculator')"
+                  >Sleep Calculator</a
+                >
+              </li>
+              <li><a href="#" onclick="showPage('todo-list')">Todo List</a></li>
+              <li>
+                <a href="#" onclick="showPage('unit-converter')"
+                  >Unit Converter</a
+                >
+              </li>
+              <li><a href="#" onclick="showPage('settings')">Settings</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Contact</h4>
+            <p>
+              Have suggestions or feedback? We'd love to hear from you to
+              improve our tools and add new features.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
